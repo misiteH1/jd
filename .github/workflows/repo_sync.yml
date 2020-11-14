@@ -32,12 +32,16 @@ jobs:
         if: env.PAT
         with:
 <<<<<<< HEAD
+<<<<<<< HEAD
           source_repo: "https://github.com/lxk0301/scripts.git"
 =======
           source_repo: "https://github.com/lxk0301/jd_scripts.git"
 >>>>>>> origin/main
+=======
+          source_repo: "https://github.com/lxk0301/jd_scripts.git"
+>>>>>>> 83e7f9e61fde35f13c31f8a12b9830c1b55a09b8
           source_branch: "master"
-          destination_branch: "master"
+          destination_branch: "main"
           github_token: ${{ secrets.PAT }}
       # 我自己同步到gitee使用，其他人可忽略
       - name: sync github -> gitee
