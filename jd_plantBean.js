@@ -20,7 +20,6 @@ cron "1 7-21/2 * * *" script-path=https://raw.githubusercontent.com/lxk0301/jd_s
 ====================================小火箭=============================
 京东种豆得豆 = type=cron,script-path=https://raw.githubusercontent.com/lxk0301/jd_scripts/master/jd_plantBean.js, cronexpr="1 7-21/2 * * *", timeout=200, enable=true
 
-
 搬的https://github.com/uniqueque/QuantumultX/blob/4c1572d93d4d4f883f483f907120a75d925a693e/Script/jd_plantBean.js
 */
 const $ = new Env('京东种豆得豆');
