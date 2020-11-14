@@ -22,13 +22,21 @@ hostname = wq.jd.com
 【Surge脚本配置】:
 ===================
 [Script]
+<<<<<<< HEAD
 获取京东Cookie = type=http-request,pattern=^https:\/\/wq\.jd\.com\/user_new\/info\/GetJDUserInfoUnion,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/lxk0301/scripts/master/JD_extra_cookie.js,script-update-interval=0
+=======
+获取京东Cookie = type=http-request,pattern=^https:\/\/wq\.jd\.com\/user_new\/info\/GetJDUserInfoUnion,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/lxk0301/jd_scripts/master/JD_extra_cookie.js,script-update-interval=0
+>>>>>>> origin/main
 
 ===================
 【Loon脚本配置】:
 ===================
 [Script]
+<<<<<<< HEAD
 http-request https:\/\/wq\.jd\.com\/user_new\/info\/GetJDUserInfoUnion tag=获取京东Cookie, script-path=https://raw.githubusercontent.com/lxk0301/scripts/master/JD_extra_cookie.js
+=======
+http-request https:\/\/wq\.jd\.com\/user_new\/info\/GetJDUserInfoUnion tag=获取京东Cookie, script-path=https://raw.githubusercontent.com/lxk0301/jd_scripts/master/JD_extra_cookie.js
+>>>>>>> origin/main
 
 
 ===================
@@ -36,7 +44,11 @@ http-request https:\/\/wq\.jd\.com\/user_new\/info\/GetJDUserInfoUnion tag=获�
 ===================
 
 [rewrite_local]
+<<<<<<< HEAD
 https:\/\/wq\.jd\.com\/user_new\/info\/GetJDUserInfoUnion  url script-request-header https://raw.githubusercontent.com/lxk0301/scripts/master/JD_extra_cookie.js
+=======
+https:\/\/wq\.jd\.com\/user_new\/info\/GetJDUserInfoUnion  url script-request-header https://raw.githubusercontent.com/lxk0301/jd_scripts/master/JD_extra_cookie.js
+>>>>>>> origin/main
 
  */
 

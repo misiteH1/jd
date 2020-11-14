@@ -2,24 +2,41 @@
  * @Author: lxk0301 https://github.com/lxk0301 
  * @Date: 2020-08-16 18:54:16
  * @Last Modified by: lxk0301
+<<<<<<< HEAD
  * @Last Modified time: 2020-11-05 18:54:37
+=======
+ * @Last Modified time: 2020-11-11 18:54:37
+>>>>>>> origin/main
  */
 /*
 京小超(活动入口：京东APP-》首页-》京东超市-》底部东东超市)
 现有功能：每日签到，日常任务（分享游戏，逛会场，关注店铺，卖货能手），收取金币，收取蓝币,商圈活动
 Some Functions Modified From https://github.com/Zero-S1/JD_tools/blob/master/JD_superMarket.py
 支持京东双账号
+<<<<<<< HEAD
 京小超兑换奖品请使用此脚本 https://raw.githubusercontent.com/lxk0301/scripts/master/jd_blueCoin.js
+=======
+京小超兑换奖品请使用此脚本 https://raw.githubusercontent.com/lxk0301/jd_scripts/master/jd_blueCoin.js
+>>>>>>> origin/main
 脚本兼容: QuantumultX, Surge, Loon, JSBox, Node.js
 // QuantumultX
 [task_local]
 #京小超
+<<<<<<< HEAD
 11 1-23/5 * * * https://raw.githubusercontent.com/lxk0301/scripts/master/jd_superMarket.js, tag=京小超, img-url=https://raw.githubusercontent.com/58xinian/icon/master/jxc.png, enabled=true
 // Loon
 [Script]
 cron "11 1-23/5 * * *" script-path=https://raw.githubusercontent.com/lxk0301/scripts/master/jd_superMarket.js,tag=京小超
 // Surge
 京小超 = type=cron,cronexp="11 1-23/5 * * *",wake-system=1,timeout=320,script-path=https://raw.githubusercontent.com/lxk0301/scripts/master/jd_superMarket.js
+=======
+11 1-23/5 * * * https://raw.githubusercontent.com/lxk0301/jd_scripts/master/jd_superMarket.js, tag=京小超, img-url=https://raw.githubusercontent.com/58xinian/icon/master/jxc.png, enabled=true
+// Loon
+[Script]
+cron "11 1-23/5 * * *" script-path=https://raw.githubusercontent.com/lxk0301/jd_scripts/master/jd_superMarket.js,tag=京小超
+// Surge
+京小超 = type=cron,cronexp="11 1-23/5 * * *",wake-system=1,timeout=320,script-path=https://raw.githubusercontent.com/lxk0301/jd_scripts/master/jd_superMarket.js
+>>>>>>> origin/main
  */
 const $ = new Env('京小超');
 //Node.js用户请在jdCookie.js处填写京东ck;
@@ -62,8 +79,17 @@ let shareCodes = [ // IOS本地脚本用户这个列表填入你要助力的好�
       console.log(`\n开始【京东账号${$.index}】${$.nickName || $.UserName}\n`);
       if (!$.isLogin) {
         $.msg($.name, `【提示】cookie已失效`, `京东账号${$.index} ${$.nickName || $.UserName}\n请重新登录获取\nhttps://bean.m.jd.com/`, {"open-url": "https://bean.m.jd.com/"});
+<<<<<<< HEAD
         $.setdata('', `CookieJD${i ? i + 1 : "" }`);//cookie失效，故清空cookie。
         if ($.isNode()) await notify.sendNotify(`${$.name}cookie已失效 - ${$.UserName}`, `京东账号${$.index} ${$.UserName}\n请重新登录获取cookie`);
+=======
+
+        if ($.isNode()) {
+          await notify.sendNotify(`${$.name}cookie已失效 - ${$.UserName}`, `京东账号${$.index} ${$.UserName}\n请重新登录获取cookie`);
+        } else {
+          $.setdata('', `CookieJD${i ? i + 1 : "" }`);//cookie失效，故清空cookie。$.setdata('', `CookieJD${i ? i + 1 : "" }`);//cookie失效，故清空cookie。
+        }
+>>>>>>> origin/main
         continue
       }
       message = '';
@@ -87,6 +113,10 @@ async function jdSuperMarket() {
   await receiveBlueCoin();//收蓝币（小费）
   await receiveLimitProductBlueCoin();//收限时商品的蓝币
   await smtgSign();//每日签到
+<<<<<<< HEAD
+=======
+  await smtgBeanSign()//
+>>>>>>> origin/main
   await doDailyTask();//做日常任务，分享，关注店铺，
   await help();//商圈助力
   //await smtgQueryPkTask();//做商品PK任务
@@ -279,6 +309,29 @@ function smtgSign() {
   })
 }
 
+<<<<<<< HEAD
+=======
+function smtgBeanSign() {
+  return new Promise((resolve) => {
+    $.get(taskUrl('smtg_sign',{"channel": "1"}), async (err, resp, data) => {
+      try {
+        // console.log('ddd----ddd', data)
+        if (err) {
+          console.log('\n京小超: API查询请求失败 ‼️‼️')
+          console.log(JSON.stringify(err));
+        } else {
+          //data = JSON.parse(data);
+          console.log(data)
+        }
+      } catch (e) {
+        $.logErr(e, resp);
+      } finally {
+        resolve(data);
+      }
+    })
+  })
+}
+>>>>>>> origin/main
 
 // 商圈活动
 async function businessCircleActivity() {
@@ -353,10 +406,23 @@ async function businessCircleActivity() {
         const receivedPkTeamPrize = await smtg_receivedPkTeamPrize();
         console.log(`商圈PK奖励领取结果：${JSON.stringify(receivedPkTeamPrize)}`)
         if (receivedPkTeamPrize.data.bizCode === 0) {
+<<<<<<< HEAD
           const { pkTeamPrizeInfoVO } = receivedPkTeamPrize.data.result;
           message += `【商圈PK奖励】${pkTeamPrizeInfoVO.blueCoin}蓝币领取成功\n`;
           if ($.isNode()) {
             await notify.sendNotify(`${$.name} - 账号${$.index} - ${$.nickName}`, `【京东账号${$.index}】 ${$.nickName}\n【商圈PK奖励】${pkTeamPrizeInfoVO.blueCoin}蓝币领取成功`)
+=======
+          if (receivedPkTeamPrize.data.result.pkResult === 1) {
+            const { pkTeamPrizeInfoVO } = receivedPkTeamPrize.data.result;
+            message += `【商圈PK奖励】${pkTeamPrizeInfoVO.blueCoin}蓝币领取成功\n`;
+            if ($.isNode()) {
+              await notify.sendNotify(`${$.name} - 账号${$.index} - ${$.nickName}`, `【京东账号${$.index}】 ${$.nickName}\n【商圈队伍】PK获胜\n【奖励】${pkTeamPrizeInfoVO.blueCoin}蓝币领取成功`)
+            }
+          } else if (receivedPkTeamPrize.data.result.pkResult === 2) {
+            if ($.isNode()) {
+              await notify.sendNotify(`${$.name} - 账号${$.index} - ${$.nickName}`, `【京东账号${$.index}】 ${$.nickName}\n【商圈队伍】PK失败`)
+            }
+>>>>>>> origin/main
           }
         }
       } else if (prizeInfo.pkPrizeStatus === 1) {
@@ -1329,7 +1395,10 @@ function requireConfig() {
     notify = $.isNode() ? require('./sendNotify') : '';
     //Node.js用户请在jdCookie.js处填写京东ck;
     const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
+<<<<<<< HEAD
     const jdShareCodes = $.isNode() ? require('./jdSuperMarketShareCodes.js') : '';
+=======
+>>>>>>> origin/main
     //IOS等用户直接用NobyDa的jd cookie
     if ($.isNode()) {
       Object.keys(jdCookieNode).forEach((item) => {
@@ -1339,6 +1408,7 @@ function requireConfig() {
       })
       if (process.env.JD_DEBUG && process.env.JD_DEBUG === 'false') console.log = () => {};
     } else {
+<<<<<<< HEAD
       cookiesArr.push($.getdata('CookieJD'));
       cookiesArr.push($.getdata('CookieJD2'));
     }
@@ -1380,6 +1450,12 @@ function requireConfig() {
         jdSuperMarketShareArr.push(temp.join('@'));
       }
     }
+=======
+      cookiesArr.push(...[$.getdata('CookieJD'), $.getdata('CookieJD2')])
+    }
+    console.log(`共${cookiesArr.length}个京东账号\n`);
+    console.log(`京小超已改版,目前暂不用助力, 故无助力码`)
+>>>>>>> origin/main
     // console.log(`\n京小超商圈助力码::${JSON.stringify(jdSuperMarketShareArr)}`);
     // console.log(`您提供了${jdSuperMarketShareArr.length}个账号的助力码\n`);
     resolve()

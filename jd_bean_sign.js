@@ -127,7 +127,11 @@ async function changeFile (content) {
     newContent = newContent.replace(/tm\s=.*/, `tm = new Date(new Date().toLocaleDateString()).getTime() - 28800000;`);
   }
   try {
+<<<<<<< HEAD
     await fs.writeFileSync( './JD_DailyBonus.js', newContent, 'utf8');
+=======
+    await fs.writeFileSync(JD_DailyBonusPath, newContent, 'utf8');
+>>>>>>> origin/main
     console.log('替换变量完毕');
   } catch (e) {
     console.log("京东签到写入文件异常:" + e);
