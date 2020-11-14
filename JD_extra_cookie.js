@@ -32,11 +32,7 @@ hostname = wq.jd.com
 【Loon脚本配置】:
 ===================
 [Script]
-<<<<<<< HEAD
-http-request https:\/\/wq\.jd\.com\/user_new\/info\/GetJDUserInfoUnion tag=获取京东Cookie, script-path=https://raw.githubusercontent.com/lxk0301/scripts/master/JD_extra_cookie.js
-=======
 http-request https:\/\/wq\.jd\.com\/user_new\/info\/GetJDUserInfoUnion tag=获取京东Cookie, script-path=https://raw.githubusercontent.com/lxk0301/jd_scripts/master/JD_extra_cookie.js
->>>>>>> origin/main
 
 
 ===================
