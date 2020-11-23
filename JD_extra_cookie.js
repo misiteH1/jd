@@ -22,6 +22,7 @@ hostname = wq.jd.com
 【Surge脚本配置】:
 ===================
 [Script]
+
 获取京东Cookie = type=http-request,pattern=^https:\/\/wq\.jd\.com\/user_new\/info\/GetJDUserInfoUnion,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/lxk0301/jd_scripts/master/JD_extra_cookie.js,script-update-interval=0
 
 ===================

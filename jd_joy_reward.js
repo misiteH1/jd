@@ -55,6 +55,7 @@ const JD_API_HOST = 'https://jdjoy.jd.com';
         } else {
           $.setdata('', `CookieJD${i ? i + 1 : "" }`);//cookie失效，故清空cookie。$.setdata('', `CookieJD${i ? i + 1 : "" }`);//cookie失效，故清空cookie。
         }
+
         continue
       }
       await joyReward();

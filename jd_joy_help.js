@@ -26,6 +26,7 @@ hostname = draw.jdfcloud.com
 http-request ^https:\/\/draw\.jdfcloud\.com(\/mirror)?\/\/pet\/enterRoom\/h5\?reqSource=weapp&invitePin=.*+(&inviteSource=task_invite&shareSource=\w+&inviteTimeStamp=\d+&openId=\w+)?|^https:\/\/draw\.jdfcloud\.com(\/mirror)?\/\/pet\/helpFriend\?friendPin script-path=https://raw.githubusercontent.com/lxk0301/jd_scripts/master/jd_joy_help.js, requires-body=true, timeout=10, tag=宠汪汪强制为别人助力
 
 
+
 你也可从下面链接拿好友的friendPin(复制链接到有京东ck的浏览器打开即可)
 
 https://jdjoy.jd.com/pet/getFriends?itemsPerPage=20&currentPage=1

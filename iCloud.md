@@ -74,7 +74,7 @@ exports.main_handler = async (event, context, callback) => {
 [![B20KxI.png](https://s1.ax1x.com/2020/11/05/B20KxI.png)](https://imgchr.com/i/B20KxI)
 [![BRCG0H.png](https://s1.ax1x.com/2020/11/05/BRCG0H.png)](https://imgchr.com/i/BRCG0H)
 
-**注意：方案一与方案二不能混合到同一个index.js文件中使用，同一个仓库下，二者只能选择其一。感谢[issues#115](https://github.com/lxk0301/jd_scripts/issues/115)中的解决方案，目前云函数连续测试已经可以规避热启动问题了**
+**注意：方案一与方案二不能混合到同一个index.js文件中使用，同一个仓库下，二者只能选择其一。目前由于云函数热启动问题的存在，频繁的触发器启动，虽然日志显示“调用成功”，但实际内容却没有执行，方案一与方案二暂时无法规避此问题，期待之后能解决**
 
  **增加cookie**
 

@@ -1,3 +1,4 @@
+
 ## 不要fork! 不然下次GitHub还会继续封这个仓库
 
 ## 特别声明: 
@@ -49,12 +50,15 @@
 
 **TODO**
 
+
 - [x] 完善京小超脚本[jd_superMarket.js](https://raw.githubusercontent.com/lxk0301/jd_scripts/master/jd_superMarket.js)
 - [x] 京小超商圈助力功能[jd_superMarket.js](https://raw.githubusercontent.com/lxk0301/jd_scripts/master/jd_superMarket.js)
+
 
 ## 食用方法
 
 ### 方法一：本地安装Node.js，下载本库脚本
+
 
   - 教程请见：[EvineDeng/jd-base](https://github.com/EvineDeng/jd-base)，适用于以下系统：
 
@@ -70,7 +74,32 @@
   - 腾讯云云函数 [快速部署教程](tencentscf.md)（免费）
   - 腾讯云云函数控制台使用 [教程说明](iCloud.md)
   - 腾讯云云函数 [GitHub Action部署教程](tencentscf.md#github-action-部署)
-       
+
+        
+### 方法三：GitHub Action（推荐）
+
+ - 使用教程看 [GitHub Action教程](githubAction.md)
+ - GitHub Action 定时运行会有延迟(大概15分钟左右),故一些需要抢购(对时间要求比较严格)脚本不适合使用(例如`jd_joy_reward.js`, `jd_blueCoin.js`, `jd_xtg.js`等脚本)
+ - GitHub Action需要用到的[Secrets集合](https://github.com/lxk0301/scripts/blob/master/githubAction.md#%E4%B8%8B%E6%96%B9%E6%8F%90%E4%BE%9B%E4%BD%BF%E7%94%A8%E5%88%B0%E7%9A%84-secrets%E5%85%A8%E9%9B%86%E5%90%88)
+ 
+### 方法四：Docker（NAS或VPS用户）
+
+ - 可以精确控制任务运行时间，有三种办法：[docker办法一](https://github.com/lxk0301/scripts/tree/master/docker)、[docker办法二（和本地安装Node.js有点类似）](https://github.com/EvineDeng/jd-base)、[docker办法三](https://github.com/chinnkarahoi/jd-scripts-docker)
+ - [环境变量](https://github.com/lxk0301/scripts/blob/master/githubAction.md#%E4%B8%8B%E6%96%B9%E6%8F%90%E4%BE%9B%E4%BD%BF%E7%94%A8%E5%88%B0%E7%9A%84-secrets%E5%85%A8%E9%9B%86%E5%90%88)
+ 
+#### 注：以上四种运行机制都是Node.js，故您需仔细阅读下面几点
+
+
+  - 如果使用方法一与方法二，需自行提供京东cookie填写到 [jdCookie.js](https://github.com/lxk0301/scripts/blob/master/jdCookie.js) 里面
+
+  - 方法三京东cookie不要！不要！不要！填写到 [jdCookie.js](https://github.com/lxk0301/scripts/blob/master/jdCookie.js) 里面
+   
+  - 获取京东cookie教程可参考 [浏览器获取京东cookie教程](https://github.com/lxk0301/scripts/blob/master/backUp/GetJdCookie.md) , [插件获取京东cookie教程](https://github.com/lxk0301/scripts/blob/master/backUp/GetJdCookie2.md)
+
+  - 方法四Docker安装Cookie请见各自的说明。
+
+### 方法五：iOS系统的代理软件（QuantumultX, Surge, Loon, 小火箭）
+
  
 ### 方法三：Docker（NAS或VPS用户）
 
@@ -89,13 +118,16 @@
 
 ### 方法四：iOS系统的代理软件（QuantumultX, Surge, Loon, 小火箭）
 
+
 #### 以下内容只针对iOS用户
 
 #### ios使用多个京东账号，需要使用BoxJs保存多会话进行切换 
 
 ##### BoxJs简单说明可看作者[BoxJs仓库地址](https://github.com/chavyleung/scripts/)
 
+
 使用box可以实现远程订阅助力好友(需订阅此 [链接](https://raw.githubusercontent.com/lxk0301/jd_scripts/master/lxk0301.boxjs.json))
+
 
 - [BoxJs使用教程](https://chavyleung.gitbook.io/boxjs/)
 
@@ -169,6 +201,7 @@
 ```
 ### 赞赏码(开发维护不易,请赏杯茶水费)
 <div align=center><img width="250" height="250" src="https://raw.githubusercontent.com/lxk0301/jd_scripts/master/icon/thanks.jpg"/></div>
+
 
 ### 特别感谢(排名不分先后)：
 * [@NobyDa](https://github.com/NobyDa)
