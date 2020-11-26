@@ -6,7 +6,7 @@ name: jd_jdfactory
 on:
   workflow_dispatch:
   schedule:
-    - cron: '35 0,4,12,20, * * *'
+    - cron: '35 * * * *'
   watch:
     types: [started]
   repository_dispatch:
