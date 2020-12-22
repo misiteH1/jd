@@ -55,12 +55,13 @@
 1.  【[@yangtingxiao](https://github.com/yangtingxiao)】京东抽奖机([jd_lotteryMachine.js](https://raw.githubusercontent.com/lxk0301/jd_scripts/master/jd_lotteryMachine.js))
 2.  【[@yangtingxiao](https://github.com/yangtingxiao)】京东排行榜([jd_rankingList.js](https://raw.githubusercontent.com/lxk0301/jd_scripts/master/jd_rankingList.js))
 
+
 **脚本兼容: [QuantumultX](https://apps.apple.com/us/app/quantumult-x/id1443988620), [Surge](https://apps.apple.com/us/app/surge-4/id1442620678), [Loon](https://apps.apple.com/us/app/loon/id1373567447), 小火箭, JSBox, Node.js**
 
 **TODO**
 
-- [ ] 东东工厂相互助力
-- [ ] 京喜工厂相互助力
+- [x] 完善京小超脚本[jd_superMarket.js](https://raw.githubusercontent.com/lxk0301/jd_scripts/master/jd_superMarket.js)
+- [x] 京小超商圈助力功能[jd_superMarket.js](https://raw.githubusercontent.com/lxk0301/jd_scripts/master/jd_superMarket.js)
 
 ## 食用方法
 
