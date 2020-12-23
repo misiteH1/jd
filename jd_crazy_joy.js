@@ -33,6 +33,7 @@ let helpSelf = false // 循环助力
 let applyJdBean = 0
 let cookiesArr = [], cookie = '', message = '';
 const inviteCodes = [
+  'e3te6tM9hh0oa1vpb_czWA==@J_n4Q6ETBno=@OF67hD7lWQ0=',
   'e3te6tM9hh0oa1vpb_czWA==@J_n4Q6ETBno=@OF67hD7lWQ0='
 ];
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
